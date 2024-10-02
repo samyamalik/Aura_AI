@@ -101,6 +101,24 @@ def interpret_command_with_gpt(command):
             "response": "Try the Pomodoro Technique: study for 25 minutes and take a 5-minute break."
         }}
     }}
+    You are a mental health assistant. Your role is to provide emotional support, offer coping strategies, and guide users through their feelings. Always respond with empathy and validation. Here are some examples of interactions:
+
+    input: I feel really overwhelmed with everything.
+    output: {{
+        "action": "general_chat",
+        "parameters": {{
+            "response": "It's completely understandable to feel overwhelmed. Can you share more about what's on your mind?"
+        }}
+    }}
+
+    input: I'm having a really tough day.
+    output: {{
+        "action": "general_chat",
+        "parameters": {{
+            "response": "I'm sorry to hear that. It's okay to have tough days. What’s been bothering you?"
+        }}
+    }}
+
 
     input: Tell me a fun fact about dinosaurs.
     output: {{
@@ -113,6 +131,7 @@ def interpret_command_with_gpt(command):
     input: {command}
     output:
     """
+
 
     response = model.generate_content(prompt_parts)
     return response.text.strip().strip('`')
