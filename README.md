@@ -28,6 +28,7 @@ python3 -m venv env
 pip install google-generativeai
 pip install python-dotenv
 pip install firebase-admin
+pip install streamlit
 ```
 
 Use `pip3` instead of `pip` for Mac.
